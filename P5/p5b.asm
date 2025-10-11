@@ -10,6 +10,7 @@ _start:
 	call puts			; imprime cadena msg terminada en valor nulo (0) previo a ser modificada
 	add ebx, 23					;sumarle 23 a ebx para que este en la direccion de msg + 23 (apuntando a la letra x)
 	mov byte[ebx],'X'		; se mueve 'X' en la direccion con el valor de ebx, CASO INDIRECTO
+	mov ebx, 0			;para que no retorne error
 	call puts			; imprime cadena msg terminada en valor nulo (0) pero ya modificada
 
 	mov	eax, 1	    	; seleccionar llamada al sistema para fin de programa

@@ -20,8 +20,8 @@ _start:                     ;tell linker entry point
 	mov al,10	; cambio de linea
 	call putchar
 
-	mov eax, ebx
-	call pHex_dw
+	push bx
+	call pHex_w
 
 	push bx
 	call pHex_w

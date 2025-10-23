@@ -136,13 +136,13 @@ _start:                     ;tell linker entry point
     mov eax,esi
     call pBin_dw
     call saltoLinea
-    mov cl,3            ;se multiplica por 3 veces dos osea 8
+    mov cl,3                ;se multiplica por 3 veces dos osea 8
     shl esi,cl
     mov eax,esi
     call pBin_dw
     call saltoLinea
-    (0000-1010)
-    (0011-0010)
+    ;(0000-1010)   intento de ver un patron para multiplicar por 10
+    ;(0011-0010)
 
     xor ebx,ebx
 	mov eax, 1	;system call number (sys_exit) -- fin del programa

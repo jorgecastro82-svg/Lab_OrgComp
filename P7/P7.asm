@@ -63,8 +63,86 @@ _start:                     ;tell linker entry point
     mov ch,0xA7
     mov al,ch
     call pHex_b
+    call saltoLinea
+    mov al,ch
     call pBin_b
     call saltoLinea
+
+    ;1010-0111
+    ;0100-1000      se usara or por que su funciion principal es la de convertir a 1
+    ;(48)
+
+    or ch,0x48
+    mov al,ch
+    call pBin_b
+    call saltoLinea
+    call saltoLinea
+
+    ;inciso f
+    mov bp,	0x67DA
+    mov ax,bp
+    call pHex_w
+    call saltoLinea
+    mov ax,bp
+    call pBin_w
+    call saltoLinea
+
+    ;0110-0111-1101-1010
+    ;1011-1011-1010-1101    se usara and ya que su funcion princpal es la de convertir a 0s
+    ;se pasa a hexadecimal
+    ;(BBAD)
+    and bp,0xBBAD
+    mov ax,bp
+    call pBin_w
+    call saltoLinea
+    call saltoLinea
+
+    ;inciso g
+    mov ax,bp
+    call pBin_w
+    call saltoLinea
+    mov cl,3                ;ya que se dividira 3 veces entre dos, osea entre 8
+    shr bp,cl
+    mov ax,bp
+    call pBin_w
+    call saltoLinea
+    call saltoLinea
+
+    ;inciso h
+    mov eax,ebx
+    call pBin_dw
+    call saltoLinea
+    mov cl,5               ;ya que se dividira 5 veces entre dos, significa division entre 32
+    shr ebx,cl
+    mov eax,ebx
+    call pBin_dw
+    call saltoLinea
+    call saltoLinea
+
+    ;inciso i
+    mov ax,cx
+    call pBin_w
+    call saltoLinea
+    sal cx,3            ;ya que se multiplicara 3 veces por dos, significa multiplicacion por 8
+    mov ax,cx
+    call pBin_w
+    call saltoLinea
+    call saltoLinea
+
+    ;inciso j
+    pop esi
+
+    ;inciso k
+    mov eax,esi
+    call pBin_dw
+    call saltoLinea
+    mov cl,3            ;se multiplica por 3 veces dos osea 8
+    shl esi,cl
+    mov eax,esi
+    call pBin_dw
+    call saltoLinea
+    (0000-1010)
+    (0011-0010)
 
     xor ebx,ebx
 	mov eax, 1	;system call number (sys_exit) -- fin del programa

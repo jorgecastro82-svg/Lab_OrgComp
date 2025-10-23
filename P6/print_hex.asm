@@ -6,27 +6,7 @@ section	.text
 
 _start:                     ;tell linker entry point
 
-	mov ebx, 0x5C4B2A60			;valor original
-	mov eax,ebx
-	call pHex_dw
-
-	mov al,10	; cambio de linea
-	call putchar
-
-	add ebx, 0x02219157		;valor sumado con mi matricula
-	mov eax,ebx
-	call pHex_dw
-
-	mov al,10	; cambio de linea
-	call putchar
-
-	push bx
-	call pHex_w
-
-	push bx
-	call pHex_w
-
-	mov al,102
+	mov al,100
 	call pHex_b	; muestra en pantalla 64
 
 	mov al,10	; cambio de linea
@@ -52,4 +32,5 @@ _start:                     ;tell linker entry point
 
 	mov eax, 1	;system call number (sys_exit) -- fin del programa
 	int 0x80        ;call kernel
+
 

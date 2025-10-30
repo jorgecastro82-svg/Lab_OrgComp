@@ -98,7 +98,7 @@ nxt2:
 	call putchar
 
     ;inciso c
-    mov cx,0
+    mov cx,3
     cmp cx,0
     jz nxt3                     ;solo se va imprimir un salto de linea indicando que se imprimio una torre de 0 asteriskos
     jl fueraRango
@@ -126,6 +126,9 @@ fueraRango:
 nxt3:
     mov al,10					;cambio de linea
 	call putchar
+
+    ;inciso d
+    
 
 
     mov ebx,0

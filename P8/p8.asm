@@ -8,6 +8,8 @@ section .data
     eql db "Tu caracter es igual a m",0
     isNum db "Tu caracter es un numero",0
     isLetter db "Tu caracter es una letra mayuscula"
+    string db "0123456789",0 
+    captured db "Datos Capturados",0
 
 section	.text
 
@@ -128,7 +130,23 @@ nxt3:
 	call putchar
 
     ;inciso d
+    ;captura de los 10 datos
+    mov ecx,10
+captura:
+    call getche
+    mov edi,string
+    add edi,10
+    sub edi,ecx
+    mov [edi],al
+    loop captura
+
+    ;desplegar que ya se capturo los datos
+    mov edx
+
+
     
+
+
 
 
     mov ebx,0

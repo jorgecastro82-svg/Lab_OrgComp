@@ -141,7 +141,23 @@ captura:
     loop captura
 
     ;desplegar que ya se capturo los datos
-    mov edx
+    mov al,10					;cambio de linea
+	call putchar
+    mov edx,captured
+    call puts
+    mov al,10					;cambio de linea
+	call putchar
+
+    mov ecx,10
+despliegue:
+    mov edi,string
+    add edi,10
+    sub edi,ecx
+    mov al,[edi]
+    call putchar
+    mov al,10					;cambio de linea
+	call putchar
+    loop despliegue
 
 
     

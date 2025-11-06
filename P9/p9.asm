@@ -19,16 +19,28 @@ _start:
     call printArrayHex
     call line_fit
 
-    ;captura arreglo 2
+    ;captura arreglo (en el 1)
     mov ecx,N 
     mov ebx,array1
     call inpArray
     call line_fit
 
-    ;impresion arreglo2
+    ;impresion arreglo 1 con datos capturados
     mov ecx,N 
     mov ebx,array1
     call printArrayHex
+    call line_fit
+
+    ;impresion suma de arreglos
+    mov ecx,N 
+    mov ebx,array1
+    mov edx,array2
+    call vectorSum
+
+    mov ecx,N 
+    mov ebx,array1
+    call printArrayHex
+    call line_fit
 
     ;salida del sistema
     mov eax,1
@@ -99,8 +111,10 @@ suma:
     mov edi,N           
     sub edi,ecx     ;inidice = N-ecx
     ;ebx es la direccion del primer arreglo y edx la del segundo, resultado se guardara en el primer arreglo
-    mov eax,[ebx+edi]
-    
+    mov al,[ebx+edi]
+    add al,[edx+edi]
+    mov [ebx+edi],al
+
     loop suma
 exit3:
     ret

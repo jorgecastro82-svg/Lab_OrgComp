@@ -1,7 +1,7 @@
 ;gcc -m32
 
 global suma
-global strlen
+global strlenasm
 global getBit
 
 section .text
@@ -14,16 +14,16 @@ suma:
     pop ebp
     ret
 
-strlen:
+strlenasm:
     push ebp
     mov ebp,esp
     mov ecx,0
     mov eax,[ebp + 8]
 ciclo:
-    cmp eax,0
+    cmp byte [eax],0
     je exit
     inc ecx
-    add eax,4
+    add eax,1
     jmp ciclo
 exit:
     mov eax,ecx

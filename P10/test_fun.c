@@ -8,13 +8,13 @@ extern int getBit(int,int);
 
 int main(){
 
-    int valor = suma(1,9);
+    int valor = suma(11,22);
     printf("%d\n",valor);
 
-    valor = strlenasm("Hola mundo");
+    valor = strlenasm("longitud 11");
     printf("%d\n",valor);
 
-    valor = getBit(2,1);
+    valor = getBit(10,3);
     printf("%d\n",valor);
     return 0;
 }

@@ -11,10 +11,10 @@ int main(){
     int valor = suma(1,9);
     printf("%d\n",valor);
 
-    valor = strlenasm(" ");
+    valor = strlenasm("Hola mundo");
     printf("%d\n",valor);
 
-    valor = getBit(14,0);
+    valor = getBit(2,1);
     printf("%d\n",valor);
     return 0;
 }
